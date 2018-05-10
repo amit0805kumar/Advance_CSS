@@ -1,0 +1,92 @@
+.navigation {
+    &__checkbox {
+        display: none;
+    }
+
+    &__background {
+        height: 6rem;
+        width: 6rem;
+        border-radius: 50%;
+        position: fixed;
+        top: 6.5rem;
+        right: 6.5rem;
+        background-image: radial-gradient($color-darkgreen, $color-lightgreen);
+        z-index: 1000;
+        //transform: scale(60);
+        transition: all 0.3s ease-in-out;
+    }
+
+    &__button {
+        height: 7rem;
+        width: 7rem;
+        border-radius: 50%;
+        position: fixed;
+        background: $color-white;
+        top: 6rem;
+        right: 6rem;
+        z-index: 2000;
+        box-shadow: 0 1rem 3rem rgba($color-black,0.2);
+        &:hover{
+        cursor: pointer;
+        }
+    }
+    
+    
+    
+    &__nav {
+        height: 100vh;
+        width: 0;
+        position: fixed;
+        top: 0;
+        right: 0;
+        z-index: 1500;
+        text-align: center;
+    opacity: 0;
+        transition: all 0.3s ease-in-out;
+    }
+
+    &__list {
+        list-style: none;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        text-align: center;
+    }
+
+    &__item {
+        margin: 1rem;
+        overflow: hidden;
+    }
+    &__link {
+        &:link,
+        &:visited {
+            text-decoration: none;
+            display: inline-block;
+            color: $color-white;
+            font-size: 3rem;
+            font-weight: 300;
+            background-image: linear-gradient(120deg, transparent 0%, transparent 50%, $color-white 50%);
+            padding: 0.6rem 2rem;
+            transition: all 0.3s ease-in-out;
+            background-size: 210%;
+            background-repeat: no-repeat;
+        }
+        &:hover,
+        &:active {
+            color: $color-lightgreen;
+            background-position: 104%;
+            margin-left: 20px;
+        }
+    }
+    
+    &__checkbox:checked ~ &__background
+    {
+        transform: scale(60);
+    }
+     &__checkbox:checked ~ &__nav
+    {
+        width: 100%;
+        opacity: 1;
+    }
+}
