@@ -1,9 +1,7 @@
-@media (max-width: 600px) {
-  html {
-    font-size: 5px; } }
-@media (min-width: 487px) {
-  html {
-    font-size: 10px; } }
+/*
+Break Points..
+320 360 375 480   720 768   1027   1280 1366 1440 1600   1920
+*/
 * {
   box-sizing: inherit;
   margin: 0px;
@@ -11,6 +9,28 @@
 
 body {
   box-sizing: border-box; }
+
+html {
+  font-size: 62.5%;
+  /*
+      @include respond(phone)
+      {
+          font-size: 50%;
+      }
+      ---don't need this one
+    */ }
+  @media (min-width: 112.5em) {
+    html {
+      font-size: 75%; } }
+  @media (max-width: 75em) {
+    html {
+      font-size: 56.25%; } }
+  @media (max-width: 56.25em) {
+    html {
+      font-size: 50%; } }
+  @media (max-width: 37.5em) {
+    html {
+      font-size: 30%; } }
 
 @keyframes moveInLeft {
   0% {
