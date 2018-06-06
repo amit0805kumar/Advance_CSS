@@ -3,18 +3,30 @@
     background-color: $color-grey-light-1;
     padding: 25rem 0;
     margin-top: -20rem;
+    
+    @include respond(tab-port){
+        padding-top: 20rem;
+        padding-bottom: 30rem;
+    }
 }
 .section
 {
-    margin-top: -15rem;
+   // 
 }
 .section-features{
     padding: 20rem 0;
     background-image: linear-gradient(to top, rgba(76, 175, 80, 0.8), rgba(200, 230, 201, 0.7)), url("../Images/images.jpg");
-    clip-path: polygon(0 0, 100% 20%, 100% 95%, 0 75%);
+    clip-path: polygon(0 20%, 100% 0%, 100% 75%, 0 100%);
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
+    margin-top: -15rem;
+    
+    @include respond(tab-port){
+        padding: 15rem 0;
+        clip-path: polygon(0 7%, 100% 0%, 100% 93%, 0 100%);
+         margin-top: -8rem;
+    }
 }
 .section-tours
 {
@@ -26,11 +38,19 @@
 .section-stories{
     padding: 15rem 0;
       position: relative;
+    
+    @include respond(tab-port){
+        padding: 10rem 0;
+    }
 
 }
 .section-book{
     background-image:  linear-gradient(to right bottom, $color-darkgreen, $color-lightgreen);
     padding: 15rem 0;
+     margin-top: -5rem;
+    @include respond(tab-port){
+        padding: 10rem 0;
+    }
 }
 .book{
     background-image: url("../Images/book.jpg");

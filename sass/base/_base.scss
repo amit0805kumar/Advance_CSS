@@ -7,6 +7,13 @@
 body {
   
     box-sizing: border-box;
+        padding: 3rem;
+    
+    
+     @include respond(tab-port)
+    {
+        padding: 0;
+    }
 }
 html
 {
@@ -31,9 +38,5 @@ html
     {
         font-size: 50%;  // 1rem = 8px here so 8/16 = 50%
     } 
-    @include respond(phone)
-    {
-        font-size: 30%;  // 1rem = 8px here so 8/16 = 50%
-    }
    
 }

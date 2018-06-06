@@ -11,6 +11,11 @@
         animation-name: moveInLeft;
         animation-duration: 1.5s;
         white-space: nowrap;
+        
+        @include respond(phone){
+            font-size: 5rem;
+            letter-spacing: 1rem;
+        }
     }
 
     &--sub {
@@ -22,6 +27,11 @@
         transform: translateX(-1rem);
         animation-name: moveInRight;
         animation-duration: 1.5s;
+        
+        @include respond(phone){
+            font-size: 1rem;
+            letter-spacing: 0.5rem;
+        }
     }
 }
 
@@ -30,7 +40,7 @@ body {
     line-height: 1.7;
     /* font-size: 16px;*/
     color: $color-grey;
-    padding: 3rem;
+
     box-sizing: border-box;
 }
 .heading-secondary{
@@ -44,6 +54,16 @@ body {
     
     letter-spacing: 2px;
     transition: all 0.2s;
+    
+    @include respond(tab-port)
+    {
+        font-size: 3rem;
+    }
+    
+    @include respond(phone)
+    { 
+        font-size: 2.5rem;
+    }
     
     &:hover{
         
