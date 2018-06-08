@@ -15,10 +15,17 @@
         height: 15rem;
         float: left;
         shape-outside: circle(50% at 50% 50%);
-        clip-path: circle(50% at 50% 50%);
         transform: translateX(-1rem) skewX(12deg);
         overflow: hidden;
         position: relative;
+        border-radius: 50%;
+        @supports((-webkit-clip-path: circle(50% at 50% 50%)) or (clip-path: circle(50% at 50% 50%))) {
+            -webkit-clip-path: circle(50% at 50% 50%);
+            clip-path: circle(50% at 50% 50%);
+            width: 15rem;
+            height: 15rem;
+            border-radius: none;
+        }
     }
     &__image {
         height: 100%;
@@ -50,5 +57,50 @@
         filter: blur(2px);
         transform: scale(1);
         backface-visibility: hidden;
+    }
+
+    @include respond(tab-port) {
+
+        width: 100%;
+        margin: 0 auto;
+        box-shadow: 0 3rem 6rem rgba($color-black, 0.1);
+        border-radius: 3px;
+        padding: 3rem;
+        font-size: $default-font-size;
+        transform: skewX(0deg); //   transition: all 3s ease;
+        &__text {
+            transform: skewX(0deg);
+        }
+        &__shape {
+            width: 15rem;
+            height: 15rem;
+            float: left;
+            shape-outside: circle(50% at 50% 50%);
+            clip-path: circle(50% at 50% 50%);
+            transform: translateX(-1rem) skewX(0deg);
+            overflow: hidden;
+            position: relative;
+        }
+        &__image {
+            height: 100%;
+            backface-visibility: hidden;
+            transform: scale(1);
+            filter: blur(2px);
+        }
+
+        &__caption {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            color: $color-white;
+            text-transform: uppercase;
+            font-size: 1.9rem;
+            text-align-last: center;
+            transform: translate(-50%, -50%);
+            font-weight: 700;
+            line-height: 2rem;
+            backface-visibility: hidden;
+            opacity: 1;
+        }
     }
 }

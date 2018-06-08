@@ -23,6 +23,12 @@
                 left: -5rem;
                 transform: scale(1.2);
             }
+            @include respond(phone) {
+                top: 0rem;
+                left: -3rem;
+                transform: scale(1);
+
+            }
         }
         &--p2 {
             right: 0;
@@ -32,7 +38,16 @@
                 top: -3rem;
                 left: -7rem;
                 z-index: 100;
-                transform: scale(1.3);
+                transform: scale(1.1);
+
+            }
+
+            @include respond(phone) {
+                top: -6rem;
+                left: -12rem;
+             
+                transform: scale(1.1);
+
 
             }
         }
@@ -43,7 +58,14 @@
             @include respond(tab-port) {
                 top: -14rem;
                 left: 36rem;
-                transform: scale(1.1);
+                transform: scale(1);
+
+            }
+
+            @include respond(phone) {
+                top: -14rem;
+                left: 23rem;
+                transform: scale(1.1); 
 
             }
         }

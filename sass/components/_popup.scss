@@ -10,7 +10,8 @@
     opacity: 0;
     visibility: hidden;
     transition: all .3s;
-
+    
+    -wekit-backdrop-filter:blur(10px);
     &:target {
 
         opacity: 1;
@@ -50,17 +51,25 @@
     &__img {
         width: 100%;
         display: block;
+        @include respond(tab-land) {
+            
+        }
     }
     &__left {
         width: 25%;
         display: table-cell;
-
+        @include respond(tab-land) {
+    
+        }
     }
     &__right {
         width: 75%;
         display: table-cell;
         padding: 3rem 2rem;
         vertical-align: middle;
+        @include respond(tab-land) {
+        
+        }
     }
     &__text {
         font-size: 1.6rem;
@@ -81,7 +90,7 @@
             color: $color-dark-grey;
             text-decoration: none;
             font-size: 3.5rem;
-            position: absolute; 
+            position: absolute;
             top: 0.6rem;
             left: 97%;
             display: inline-block;
